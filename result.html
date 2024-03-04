@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: linear-gradient(to right, #4A90E2, #C86DD7);
+            color: #ffffff;
+            padding: 40px;
+            text-align: center;
+        }
+        h1, .attribute-name {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .character-image {
+            max-width: 250px;
+            border-radius: 10px;
+            margin: 30px auto;
+        }
+        .text-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Translucent background */
+            color: #333; /* Dark text color for readability */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px; /* Rounded corners for aesthetics */
+        }
+        .bio-text {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ character.name }}</h1>
+    <img src="{{ url_for('static', filename=character.image) }}" alt="{{ character.name }}" class="character-image">
+    <div class="text-container">
+        <div class="attribute-name">Biography</div>
+        <p class="bio-text">{{ character.biography }}</p>
+        <div class="attribute-name">Similarities</div>
+        <p class="bio-text">{{ character.similarities }}</p>
+        <div class="attribute-name">Fun Facts</div>
+        <p class="bio-text">{{ character.fun_facts }}</p>
+        <div class="attribute-name">Inspiration</div>
+        <p class="bio-text">{{ character.inspiration }}</p>
+    </div>
+</body>
+</html>
