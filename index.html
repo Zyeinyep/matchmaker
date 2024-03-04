@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to CSRole</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center content vertically */
+        }
+        .bg {
+            background-image: url("{{ url_for('static', filename='women_in_science.png') }}");
+            position: fixed; /* Make background cover the entire page */
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1; /* Ensure bg is behind content */
+        }
+        .content {
+            z-index: 1; /* Ensure content is above the bg */
+            text-align: center;
+            width: 80%; /* Adjust based on your preference */
+            padding: 20px;
+            margin-bottom: 100px; /* Push content up */
+        }
+        .welcome-title, .instructions {
+            background-color: rgba(248, 249, 250, 0.85); /* Light grey with transparency */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            margin: 20px 0; /* Space between elements */
+        }
+        .welcome-title {
+            font-size: 60px; /* Large font for welcome message */
+            color: #333;
+        }
+        .instructions {
+            font-size: 28px;
+            color: #555;
+            margin-bottom: 40px; /* More space above the button */
+        }
+        .custom-btn {
+            font-size: 20px;
+            padding: 15px 30px;
+            border-radius: 25px;
+            color: #fff;
+            background-image: linear-gradient(to right, #4A90E2, #C86DD7);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .custom-btn:hover, .custom-btn:focus {
+            background-image: linear-gradient(to right, #C86DD7, #4A90E2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg"></div> <!-- Background image -->
+    <div class="content">
+        <div class="welcome-title">Welcome to the CS role model matchmaker!!!</div>
+        <div class="instructions">Take the test to find out which female character you match with the most</div>
+        <a href="/take_test" class="btn custom-btn">Take a Test Now</a>
+    </div>
+</body>
+</html>
